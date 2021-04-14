@@ -1,0 +1,28 @@
+{
+  "name": "smart-invoice",
+  "version": "0.1.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "truffle build",
+    "test": "truffle test",
+    "gas-report": "GAS_REPORT=true npx truffle test",
+    "solhint": "solhint 'contracts/**/*.sol'",
+    "coverage": "node --max-old-space-size=4096 ./node_modules/.bin/truffle run coverage"
+  },
+  "keywords": [],
+  "author": "davy42",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.0.0",
+    "truffle": "^5.3.1"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.10",
+    "eth-gas-reporter": "^0.2.21",
+    "solidity-coverage": "^0.7.16"
+  }
+}
