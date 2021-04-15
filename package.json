@@ -9,7 +9,7 @@
   "scripts": {
     "build": "truffle build",
     "gas-report": "GAS_REPORT=true npx truffle test",
-    "solhint": "solhint 'contracts/**/*.sol'",
+    "solhint": "npx solhint 'contracts/**/*.sol'",
     "ganache": "ganache-cli -l 12000000 -a 15",
     "ganache:stop": "kill -9 $(lsof -t -i:8545)",
     "ttest": "truffle test",
