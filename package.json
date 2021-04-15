@@ -11,6 +11,7 @@
     "test": "truffle test",
     "gas-report": "GAS_REPORT=true npx truffle test",
     "solhint": "solhint 'contracts/**/*.sol'",
+    "ganache": "ganache-cli -l 12000000 -a 15",
     "coverage": "node --max-old-space-size=4096 ./node_modules/.bin/truffle run coverage"
   },
   "keywords": [],
