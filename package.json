@@ -8,10 +8,10 @@
   },
   "scripts": {
     "build": "truffle build",
-    "gas-report": "GAS_REPORT=true npx truffle test",
+    "gas-report": "GAS_REPORT=true truffle test",
     "solhint": "npx solhint 'contracts/**/*.sol'",
     "ganache": "ganache-cli -l 12000000 -a 15",
-    "ganache:stop": "kill -9 $(lsof -t -i:8545)",
+    "ganache:stop": "kill -9 $(lsof -t -i:8545) || true",
     "ttest": "truffle test",
     "test": "npm run ganache:stop & npm run ganache > /dev/null 2>&1 & wait-on tcp:127.0.0.1:8545 && truffle test && npm run ganache:stop",
     "coverage": "node --max-old-space-size=4096 ./node_modules/.bin/truffle run coverage"
@@ -23,10 +23,11 @@
     "@openzeppelin/contracts": "^4.0.0"
   },
   "devDependencies": {
-    "truffle": "^5.3.1",
     "@openzeppelin/test-helpers": "^0.5.10",
     "eth-gas-reporter": "^0.2.21",
+    "ganache-cli": "^6.12.2",
     "solidity-coverage": "^0.7.16",
+    "truffle": "^5.3.1",
     "wait-on": "^5.3.0"
   }
 }
