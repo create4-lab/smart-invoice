@@ -25,6 +25,8 @@
     "truffle": "^5.3.1",
     "@openzeppelin/test-helpers": "^0.5.10",
     "eth-gas-reporter": "^0.2.21",
-    "solidity-coverage": "^0.7.16"
+    "ganache-cli": "^6.12.2",
+    "solidity-coverage": "^0.7.16",
+    "wait-on": "^5.3.0"
   }
 }
