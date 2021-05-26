@@ -4,3 +4,4 @@ coverage
 coverage-artifacts
 coverage-contracts
 .DS_Store
+.env

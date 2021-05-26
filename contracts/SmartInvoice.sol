@@ -38,7 +38,9 @@ contract SmartInvoice is ISmartInvoice {
                 token.transfer(receiver, token.balanceOf(address(this)));
             }
         }
-        receiver.transfer(address(this).balance);
+        if (address(this).balance != 0) {
+            receiver.transfer(address(this).balance);
+        }
     }
 
     /// @notice Send tokens and ethers separataly to two receivers
@@ -61,7 +63,9 @@ contract SmartInvoice is ISmartInvoice {
                 token.transfer(tokenReceiver, token.balanceOf(address(this)));
             }
         }
-        ethReceiver.transfer(address(this).balance);
+        if (address(this).balance != 0) {
+            ethReceiver.transfer(address(this).balance);
+        }
     }
 
     /// @notice Send tokens and ethers to many receivers
@@ -80,7 +84,9 @@ contract SmartInvoice is ISmartInvoice {
         for (uint256 i = 0; i < tokens.length; i++) {
             IERC20 token = IERC20(tokens[i]);
             if (address(token) == ETH_ADDRESS) {
-                payable (receivers[i]).transfer(address(this).balance);
+                if (address(this).balance != 0) {
+                    payable (receivers[i]).transfer(address(this).balance);
+                }
             } else {
                 token.transfer(receivers[i], token.balanceOf(address(this)));
             }
